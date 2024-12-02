@@ -57,14 +57,7 @@ pub fn part_one(input: &str) -> Option<u64> {
             if entries.len() != 2 {
                 panic!("{}", format!("Invalid input: {}", line));
             }
-            // parse the first entry as a u64
-            // if it fails, return an error message
-            //
-            // unwrap the result to get the u64 value
-            //
-            //
-
-            [
+            (
                 entries[0]
                     .parse::<u64>()
                     .map_err(|_| format!("{} is not a positive integer", &entries[0]))
@@ -73,10 +66,10 @@ pub fn part_one(input: &str) -> Option<u64> {
                     .parse::<u64>()
                     .map_err(|_| format!("{} is not a positive integer", &entries[1]))
                     .unwrap(),
-            ]
+            )
         })
         .fold(TwoCloumns::new(), |mut acc, curr| {
-            acc.add(curr[0], curr[1]);
+            acc.add(curr.0, curr.1);
             acc
         });
 
