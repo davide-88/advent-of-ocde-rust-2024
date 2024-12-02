@@ -1,6 +1,4 @@
-use std::{collections::HashMap, hash::Hash};
-
-use tinyjson::format;
+use std::collections::HashMap;
 
 advent_of_code::solution!(1);
 
