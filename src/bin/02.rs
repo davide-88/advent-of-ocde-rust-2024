@@ -1,19 +1,5 @@
 advent_of_code::solution!(2);
 
-enum ReportSafety {
-    Safe,
-    Unsafe,
-}
-
-impl ReportSafety {
-    fn get_value(&self) -> u32 {
-        match self {
-            ReportSafety::Safe => 1,
-            ReportSafety::Unsafe => 0,
-        }
-    }
-}
-
 fn parse(input: &str) -> Vec<Vec<u32>> {
     let reports = input
         .lines()
